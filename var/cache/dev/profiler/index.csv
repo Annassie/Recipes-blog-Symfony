@@ -1,0 +1,15 @@
+f780b3,::1,GET,http://localhost:8888/recipes_symfony/public/,1602365931,,404
+2c412a,::1,GET,http://localhost:8888/recipes_symfony/public/,1602366753,,404
+422f8a,127.0.0.1,GET,https://127.0.0.1:8000/,1602368120,,404
+052f21,127.0.0.1,GET,https://127.0.0.1:8000/apple-touch-icon-precomposed.png,1602368121,3156fb,404
+3156fb,127.0.0.1,GET,https://127.0.0.1:8000/apple-touch-icon-precomposed.png,1602368121,,404
+7f80f1,127.0.0.1,GET,https://127.0.0.1:8000/apple-touch-icon.png,1602368121,e3b180,404
+e3b180,127.0.0.1,GET,https://127.0.0.1:8000/apple-touch-icon.png,1602368121,,404
+ecd33d,127.0.0.1,GET,https://127.0.0.1:8000/favicon.ico,1602368121,dd78c4,404
+dd78c4,127.0.0.1,GET,https://127.0.0.1:8000/favicon.ico,1602368121,,404
+7b739d,::1,GET,http://localhost:8888/recipes_symfony/public/,1602369510,,404
+481f4e,::1,GET,http://localhost:8888/recipes_symfony/public/,1602369531,,404
+bf97ad,127.0.0.1,GET,https://127.0.0.1:8000/,1602369699,,404
+94e65f,127.0.0.1,GET,https://127.0.0.1:8000/,1602369701,,404
+413d7c,127.0.0.1,GET,https://127.0.0.1:8000/favicon.ico,1602369705,b852af,404
+b852af,127.0.0.1,GET,https://127.0.0.1:8000/favicon.ico,1602369705,,404
