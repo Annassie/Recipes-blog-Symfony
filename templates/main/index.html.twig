@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{# {% extends 'base.html.twig' %}
 
 {% block title %}Hello MainController!{% endblock %}
 
@@ -17,4 +17,19 @@
         <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/recipes_symfony/templates/main/index.html.twig'|file_link(0) }}">templates/main/index.html.twig</a></code></li>
     </ul>
 </div>
+{% endblock %} #}
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% for page in pages %}
+    <div>
+        <h3>{{ page.title }}</h3>
+        <p>{{ page.content }}</p>
+    </div>
+
+{% endfor %}
+
 {% endblock %}
