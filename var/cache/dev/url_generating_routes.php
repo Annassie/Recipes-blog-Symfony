@@ -15,5 +15,11 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
-    'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], []],
+    'addPost' => [[], ['_controller' => 'App\\Controller\\MainController::addPost'], [], [['text', '/add-post']], [], []],
+    'editUser' => [['id'], ['_controller' => 'App\\Controller\\MainController::editUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/edit-user']], [], []],
+    'deleteUser' => [['id'], ['_controller' => 'App\\Controller\\MainController::deleteUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/delete-user']], [], []],
+    'indexUser' => [[], ['_controller' => 'App\\Controller\\MainController::indexUser'], [], [['text', '/index-user']], [], []],
+    'showUsersPosts' => [['id'], ['_controller' => 'App\\Controller\\MainController::showUsersPosts'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/show-users-posts']], [], []],
+    'addUser' => [[], ['_controller' => 'App\\Controller\\UserController::addUser'], [], [['text', '/add-user']], [], []],
+    'add-user' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/add-user']], [], []],
 ];

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Add user{% endblock %}</title>
+</head>
+<body>
+
+
+
+{# flash message #}
+{% for messsage in app.flashes('success') %}
+    <div class="alert alert-success"></div>
+    {{ messsage }}
+{% endfor %}
+
+{# forms #}
+{{ form_start(form) }}
+{{ form_widget(form) }}
+<button type="submit" class="button">Add user</button>
+{{ form_end(form) }}
+
+
+
+</body>
+</html>

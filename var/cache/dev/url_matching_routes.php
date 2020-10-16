@@ -13,7 +13,12 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/main' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
+        '/add-post' => [[['_route' => 'addPost', '_controller' => 'App\\Controller\\MainController::addPost'], null, null, null, false, false, null]],
+        '/index-user' => [[['_route' => 'indexUser', '_controller' => 'App\\Controller\\MainController::indexUser'], null, null, null, false, false, null]],
+        '/add-user' => [
+            [['_route' => 'addUser', '_controller' => 'App\\Controller\\UserController::addUser'], null, null, null, false, false, null],
+            [['_route' => 'add-user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null],
+        ],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -32,6 +37,9 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
+                .'|/edit\\-user/([^/]++)(*:189)'
+                .'|/delete\\-user/([^/]++)(*:219)'
+                .'|/show\\-users\\-posts/([^/]++)(*:255)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -41,8 +49,11 @@ return [
         116 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        159 => [
-            [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
+        159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        189 => [[['_route' => 'editUser', '_controller' => 'App\\Controller\\MainController::editUser'], ['id'], null, null, false, true, null]],
+        219 => [[['_route' => 'deleteUser', '_controller' => 'App\\Controller\\MainController::deleteUser'], ['id'], null, null, false, true, null]],
+        255 => [
+            [['_route' => 'showUsersPosts', '_controller' => 'App\\Controller\\MainController::showUsersPosts'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

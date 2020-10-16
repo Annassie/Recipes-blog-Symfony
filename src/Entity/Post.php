@@ -23,19 +23,18 @@ class Post
     private $title;
 
     /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
+
+
+    /**
      * @ORM\Column(type="text")
      */
     private $content;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $created;
 
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $modified;
 
     public function getId(): ?int
     {
@@ -53,27 +52,20 @@ class Post
 
         return $this;
     }
-
-    public function getContent(): ?string
+/*    public function __toString()
     {
-        return $this->content;
+        return $this->getUser(User::class);
+    }*/
+
+
+    public function getUser(): ?User
+    {
+        return $this->user;
     }
 
-    public function setContent(string $content): self
+    public function setUser(?User $user): self
     {
-        $this->content = $content;
-
-        return $this;
-    }
-
-    public function getCreated(): ?\DateTimeInterface
-    {
-        return $this->created;
-    }
-
-    public function setCreated(\DateTimeInterface $created): self
-    {
-        $this->created = $created;
+        $this->user = $user;
 
         return $this;
     }
@@ -81,18 +73,16 @@ class Post
     /**
      * @return mixed
      */
-    public function getModified()
+    public function getContent()
     {
-        return $this->modified;
+        return $this->content;
     }
 
     /**
-     * @param mixed $modified
+     * @param mixed $content
      */
-    public function setModified($modified): void
+    public function setContent($content): void
     {
-        $this->modified = $modified;
+        $this->content = $content;
     }
-
-
 }

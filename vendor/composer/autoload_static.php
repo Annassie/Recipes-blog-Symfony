@@ -552,6 +552,16 @@ class ComposerStaticInit99eec627e0122bb43ba326823d06c5a1
     );
 
     public static $classMap = array (
+        'App\\Controller\\MainController' => __DIR__ . '/../..' . '/src/Controller/MainController.php',
+        'App\\Entity\\Post' => __DIR__ . '/../..' . '/src/Entity/Post.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
+        'App\\Form\\AddPostType' => __DIR__ . '/../..' . '/src/Form/AddPostType.php',
+        'App\\Form\\AddUserType' => __DIR__ . '/../..' . '/src/Form/AddUserType.php',
+        'App\\Form\\RegisterFormType' => __DIR__ . '/../..' . '/src/Form/RegisterFormType.php',
+        'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\PostRepository' => __DIR__ . '/../..' . '/src/Repository/PostRepository.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
+        'App\\Service\\TestService' => __DIR__ . '/../..' . '/src/Service/TestService.php',
         'Collator' => __DIR__ . '/..' . '/symfony/intl/Resources/stubs/Collator.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\CreateDatabaseDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/CreateDatabaseDoctrineCommand.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\DoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/DoctrineCommand.php',
