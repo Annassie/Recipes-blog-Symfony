@@ -29,7 +29,7 @@ class Post
      * @Assert\NotBlank(message="Usr cannot be empty")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    //private $user;
 
 
     /**

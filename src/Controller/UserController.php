@@ -19,7 +19,7 @@ class UserController extends AbstractController
      * @Route("/add-user", name="addUser")
      * @return Response
      */
-    public function addUser(Request $request, EntityManagerInterface $em)
+/*    public function addUser(Request $request, EntityManagerInterface $em)
     {
         // creating $form object
         $form = $this->createForm(AddUserType::class);
@@ -46,7 +46,7 @@ class UserController extends AbstractController
         return $this->render('user.html.twig', [
             'form' => $form->createView()
         ]);
-    }
+    }*/
 
 
 }
