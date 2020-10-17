@@ -27,8 +27,6 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
         $this->parent = false;
 
         $this->blocks = [
-            'sidebar' => [$this, 'block_sidebar'],
-            'body' => [$this, 'block_body'],
         ];
     }
 
@@ -156,19 +154,7 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
         </div>
     </footer>
 
-<div id=\"sidebar\">
-    ";
-        // line 129
-        $this->displayBlock('sidebar', $context, $blocks);
-        // line 135
-        echo "</div>
 
-<div id=\"content\">
-    ";
-        // line 138
-        $this->displayBlock('body', $context, $blocks);
-        // line 139
-        echo "</div>
 
 
 
@@ -179,48 +165,6 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-    }
-
-    // line 129
-    public function block_sidebar($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "sidebar"));
-
-        // line 130
-        echo "        <ul>
-            <li><a href=\"/\">Home</a></li>
-            <li><a href=\"/blog\">Blog</a></li>
-        </ul>
-    ";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 138
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -236,7 +180,7 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 
     public function getDebugInfo()
     {
-        return array (  210 => 138,  196 => 130,  186 => 129,  171 => 139,  169 => 138,  164 => 135,  162 => 129,  118 => 87,  105 => 80,  101 => 79,  93 => 74,  87 => 70,  83 => 69,  49 => 37,  45 => 21,);
+        return array (  116 => 87,  103 => 80,  99 => 79,  91 => 74,  85 => 70,  81 => 69,  47 => 37,  43 => 21,);
     }
 
     public function getSourceContext()
@@ -368,18 +312,7 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
         </div>
     </footer>
 
-<div id=\"sidebar\">
-    {% block sidebar %}
-        <ul>
-            <li><a href=\"/\">Home</a></li>
-            <li><a href=\"/blog\">Blog</a></li>
-        </ul>
-    {% endblock %}
-</div>
 
-<div id=\"content\">
-    {% block body %}{% endblock %}
-</div>
 
 
 

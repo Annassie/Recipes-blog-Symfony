@@ -36,15 +36,18 @@ class MainController extends AbstractController
         $form->handleRequest($request);
 
         //send data, if form was submitted and check if form is valid
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $post = $form->getData();
 
             // add to DB
             $em->persist($post);
             $em->flush();
 
+            // flash message
+            $this->addFlash('success', 'Your post was added successfully');
+
             // when the post is added, then redirect to main-page
-//            return $this->redirectToRoute('main');
+            return $this->redirectToRoute('add-post');
 
         }
 
@@ -53,9 +56,6 @@ class MainController extends AbstractController
             'form' => $form->createView()
         ]);
     }
-
-
-
 
 
     /**
@@ -126,25 +126,25 @@ class MainController extends AbstractController
      * @param \App\Controller\EntityManagerInterface $em
      * @return \App\Controller\Response
      */
-/*    public function addPost(EntityManagerInterface $em)
-    {
-        $user = $em->getRepository(User::class)->findOneby(['id' => 1]);
+    /*    public function addPost(EntityManagerInterface $em)
+        {
+            $user = $em->getRepository(User::class)->findOneby(['id' => 1]);
 
-        // create a new post
-        $post = new Post();
+            // create a new post
+            $post = new Post();
 
-        // define title and content of post
-        $post->setTitle('Brownie cake');
-        $post->setContent('Sugar, Chocolate, Flower');
-        $post->setUser($user);
+            // define title and content of post
+            $post->setTitle('Brownie cake');
+            $post->setContent('Sugar, Chocolate, Flower');
+            $post->setUser($user);
 
-        // add to DB
-        $em->persist($post);
-        $em->flush();
+            // add to DB
+            $em->persist($post);
+            $em->flush();
 
-        return new Response('<html><body>Your post is added</body></html>');
+            return new Response('<html><body>Your post is added</body></html>');
 
-    }*/
+        }*/
 
     /**
      * @Route("/show-users-posts/{id}", name="showUsersPosts")
@@ -153,7 +153,7 @@ class MainController extends AbstractController
      */
     public function showUsersPosts(User $user, EntityManagerInterface $em)
     {
-        $posts = $em->getRepository(Post::class)->findBy(['user'=>$user]);
+        $posts = $em->getRepository(Post::class)->findBy(['user' => $user]);
 
         return $this->render('main/index.html.twig', [
             'user' => $user,

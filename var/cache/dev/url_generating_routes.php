@@ -22,4 +22,5 @@ return [
     'showUsersPosts' => [['id'], ['_controller' => 'App\\Controller\\MainController::showUsersPosts'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/show-users-posts']], [], []],
     'addUser' => [[], ['_controller' => 'App\\Controller\\UserController::addUser'], [], [['text', '/add-user']], [], []],
     'add-user' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/add-user']], [], []],
+    'add-post' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/add-post']], [], []],
 ];

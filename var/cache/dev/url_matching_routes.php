@@ -13,7 +13,10 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/add-post' => [[['_route' => 'addPost', '_controller' => 'App\\Controller\\MainController::addPost'], null, null, null, false, false, null]],
+        '/add-post' => [
+            [['_route' => 'addPost', '_controller' => 'App\\Controller\\MainController::addPost'], null, null, null, false, false, null],
+            [['_route' => 'add-post', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null],
+        ],
         '/index-user' => [[['_route' => 'indexUser', '_controller' => 'App\\Controller\\MainController::indexUser'], null, null, null, false, false, null]],
         '/add-user' => [
             [['_route' => 'addUser', '_controller' => 'App\\Controller\\UserController::addUser'], null, null, null, false, false, null],

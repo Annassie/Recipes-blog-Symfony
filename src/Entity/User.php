@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -20,17 +21,20 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=55, nullable=true)
+     * @ORM\Column(type="string", length=55)
+     * @Assert\NotBlank(message="The field can not be empty")
      */
     private $username;
 
     /**
      * @ORM\Column(type="string", length=55)
+     * @Assert\Email(message="Email is incorrect")
      */
     private $email;
 
     /**
      * @ORM\Column(type="string", length=55)
+     * @Assert\NotBlank(message="Please, fill the fild")
      */
     private $password;
 
@@ -49,7 +53,7 @@ class User
         return $this->id;
     }
     public function __toString() {
-        return $this->username;
+        return $this->username?:'n/a';
     }
     public function getUsername(): ?string
     {
