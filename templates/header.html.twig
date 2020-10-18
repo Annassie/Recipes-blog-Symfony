@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <title>Recipes</title>
 </head>
 <body>
@@ -13,20 +13,31 @@
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
     <h5 class="my-0 mr-md-auto font-weight-normal">Recipes blog</h5>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-dark" href="/recipes/index.php">Main</a>
-        <a class="p-2 text-dark" href="#">Add post</a>
-        <a class="p-2 text-dark" href="contact/contact.php">Contact us</a>
+        <a class="p-2 text-dark" href="{{ "/main" }}">Main</a>
+        <a class="p-2 text-dark" href="{{ "/add-post" }}">Add post</a>
+        <a class="p-2 text-dark" href="">Contact us</a>
     </nav>
 
-    <a class="btn btn-outline-primary" href="../recipes/login.php">Sign in</a>
+    {# login and logout #}
+    {% if app.user %}
+        <div class="">
+            <button class="button is-link mr-2">{{ app.user.username }}</button><a href="{{ path('app_logout') }}"><button class="button is-light">Logout</button></a>
+        </div>
 
-    <a class="btn btn-outline-primary" href=""><? echo ($name)?></a>
-    <a class="" href="/?action=out">Sign out</a>
+        {% else  %}
+            <a class="" href="{{ "/login" }}"><button class="button is-link mr-2">Sign in</button></a>
+
+    {% endif %}
+
+
+
+{#    <a class="btn btn-outline-primary" href=""><? echo ($name)?></a>
+    <a class="" href="/?action=out">Sign out</a>#}
 
 </div>
 
 
-<div class="container mt-5">
+{#<div class="container mt-5">
     <h3 class="mb-5">Posts</h3>
 
 
@@ -50,7 +61,7 @@
         {% endfor %}
 
     </div>
-</div>
+</div>#}
 
 </body>
 </html>

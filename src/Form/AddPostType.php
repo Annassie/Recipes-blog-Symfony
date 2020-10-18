@@ -27,7 +27,7 @@ class AddPostType extends AbstractType
                 'label' => 'Title',
                 'label_attr' => ['class' => 'label']
             ])
-//            ->add('user')
+            ->add('user')
             ->add('content', TextareaType::class, [
                 'attr' =>[
                     'class' => 'input'

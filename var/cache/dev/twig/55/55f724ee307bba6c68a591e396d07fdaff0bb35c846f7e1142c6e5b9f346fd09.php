@@ -55,108 +55,26 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 </head>
 <body>
 
-
-<div class=\"d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm\">
-    <h5 class=\"my-0 mr-md-auto font-weight-normal\">Recipes blog</h5>
-    <nav class=\"my-2 my-md-0 mr-md-3\">
-        <a class=\"p-2 text-dark\" href=\"/recipes/index.php\">Main</a>
-        <a class=\"p-2 text-dark\" href=\"#\">Add post</a>
-        <a class=\"p-2 text-dark\" href=\"contact/contact.php\">Contact us</a>
-    </nav>
-
-    <a class=\"btn btn-outline-primary\" href=\"../recipes/login.php\">Sign in</a>
-
-    <a class=\"btn btn-outline-primary\" href=\"\"><? echo (\$name)?></a>
-    <a class=\"\" href=\"/?action=out\">Sign out</a>
-
-</div>
-
-
+";
+        // line 48
+        $this->loadTemplate("header.html.twig", "main/index.html.twig", 48)->display($context);
+        // line 49
+        echo "
 <div class=\"container mt-5\">
     <h3 class=\"mb-5\">Posts</h3>
 
 
-    ";
-        // line 69
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 69, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 70
-            echo "    <div class=\"d-flex flex-wrap\">
-        <div class=\"card mb-4 shadow-sm\">
-            <div class=\"card-header\">
-                <h2 class=\"my-0 font-weight-normal\">Title of Post</h2>
-                <h4>";
-            // line 74
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 74, $this->source); })()), "username", [], "any", false, false, false, 74), "html", null, true);
-            echo "</h4>
-            </div>
-            <div class=\"card-body\">
-                <img src=\"\" class=\"img-thumbnail\">
-                <ul class=\"list-unstyled mt-3 mb-4\">
-                    <div>";
-            // line 79
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 79), "html", null, true);
-            echo "</div>
-                    <div>";
-            // line 80
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 80), "html", null, true);
-            echo "</div>
-                    <form>dfsfg</form>
-                </ul>
-                <button type=\"button\" class=\"btn btn-lg btn-block btn-outline-primary\">Details</button>
-            </div>
-        </div>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 87
+";
+        // line 72
         echo "
     </div>
 </div>
 
-    <footer class=\"container pt-4 my-md-5 pt-md-5 border-top\">
-        <div class=\"row\">
-            <div class=\"col-12 col-md\">
-                <small class=\"d-block mb-3 text-muted\">© 2017-2020</small>
-            </div>
-            <div class=\"col-6 col-md\">
-                <h5>Features</h5>
-                <ul class=\"list-unstyled text-small\">
-                    <li><a class=\"text-muted\" href=\"#\">Cool stuff</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Random feature</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Team feature</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Stuff for developers</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Another one</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Last time</a></li>
-                </ul>
-            </div>
-            <div class=\"col-6 col-md\">
-                <h5>Resources</h5>
-                <ul class=\"list-unstyled text-small\">
-                    <li><a class=\"text-muted\" href=\"#\">Resource</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Resource name</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Another resource</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Final resource</a></li>
-                </ul>
-            </div>
-            <div class=\"col-6 col-md\">
-                <h5>About</h5>
-                <ul class=\"list-unstyled text-small\">
-                    <li><a class=\"text-muted\" href=\"#\">Team</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Locations</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Privacy</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-
-
-
+";
+        // line 76
+        $this->loadTemplate("footer.html.twig", "main/index.html.twig", 76)->display($context);
+        // line 77
+        echo "
 
 </body>
 </html>";
@@ -180,7 +98,7 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 
     public function getDebugInfo()
     {
-        return array (  116 => 87,  103 => 80,  99 => 79,  91 => 74,  85 => 70,  81 => 69,  47 => 37,  43 => 21,);
+        return array (  77 => 77,  75 => 76,  69 => 72,  62 => 49,  60 => 48,  47 => 37,  43 => 21,);
     }
 
     public function getSourceContext()
@@ -232,28 +150,13 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 </head>
 <body>
 
-
-<div class=\"d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm\">
-    <h5 class=\"my-0 mr-md-auto font-weight-normal\">Recipes blog</h5>
-    <nav class=\"my-2 my-md-0 mr-md-3\">
-        <a class=\"p-2 text-dark\" href=\"/recipes/index.php\">Main</a>
-        <a class=\"p-2 text-dark\" href=\"#\">Add post</a>
-        <a class=\"p-2 text-dark\" href=\"contact/contact.php\">Contact us</a>
-    </nav>
-
-    <a class=\"btn btn-outline-primary\" href=\"../recipes/login.php\">Sign in</a>
-
-    <a class=\"btn btn-outline-primary\" href=\"\"><? echo (\$name)?></a>
-    <a class=\"\" href=\"/?action=out\">Sign out</a>
-
-</div>
-
+{% include 'header.html.twig' %}
 
 <div class=\"container mt-5\">
     <h3 class=\"mb-5\">Posts</h3>
 
 
-    {% for post in posts %}
+{#    {% for post in posts %}
     <div class=\"d-flex flex-wrap\">
         <div class=\"card mb-4 shadow-sm\">
             <div class=\"card-header\">
@@ -270,50 +173,12 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
                 <button type=\"button\" class=\"btn btn-lg btn-block btn-outline-primary\">Details</button>
             </div>
         </div>
-        {% endfor %}
+        {% endfor %}#}
 
     </div>
 </div>
 
-    <footer class=\"container pt-4 my-md-5 pt-md-5 border-top\">
-        <div class=\"row\">
-            <div class=\"col-12 col-md\">
-                <small class=\"d-block mb-3 text-muted\">© 2017-2020</small>
-            </div>
-            <div class=\"col-6 col-md\">
-                <h5>Features</h5>
-                <ul class=\"list-unstyled text-small\">
-                    <li><a class=\"text-muted\" href=\"#\">Cool stuff</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Random feature</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Team feature</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Stuff for developers</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Another one</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Last time</a></li>
-                </ul>
-            </div>
-            <div class=\"col-6 col-md\">
-                <h5>Resources</h5>
-                <ul class=\"list-unstyled text-small\">
-                    <li><a class=\"text-muted\" href=\"#\">Resource</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Resource name</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Another resource</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Final resource</a></li>
-                </ul>
-            </div>
-            <div class=\"col-6 col-md\">
-                <h5>About</h5>
-                <ul class=\"list-unstyled text-small\">
-                    <li><a class=\"text-muted\" href=\"#\">Team</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Locations</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Privacy</a></li>
-                    <li><a class=\"text-muted\" href=\"#\">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-
-
-
+{% include 'footer.html.twig' %}
 
 
 </body>

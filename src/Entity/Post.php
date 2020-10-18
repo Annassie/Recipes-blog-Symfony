@@ -25,18 +25,16 @@ class Post
     private $title;
 
     /**
-     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
-     * @Assert\NotBlank(message="Usr cannot be empty")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    //private $user;
-
-
-    /**
      * @ORM\Column(type="text")
      *@Assert\NotBlank(message="The field can not be empty")
      */
     private $content;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user;
 
 
 

@@ -2,10 +2,14 @@
 #    path: /
 #    controller: App\Controller\DefaultController::index
 
-add-user:
-  path: /add-user
-  controller: App\Controller\UserController::index
+main:
+  path: /main
+  controller: App\Controller\MainController::index
 
 add-post:
   path: /add-post
-  controller: App\Controller\MainController::index
+  controller: App\Controller\AddPostController::addPost
+
+login:
+  path: /add-post
+  controller: App\Controller\SecurityController::login

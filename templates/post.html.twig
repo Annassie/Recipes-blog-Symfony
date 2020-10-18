@@ -8,23 +8,45 @@
 </head>
 <body>
 
-<div class="columns is-centered">
-    <div class="column is-half">
+{% include 'header.html.twig' %}
 
-        {# flash message #}
-        {% for messsage in app.flashes('success') %}
-            <div class="alert alert-success"></div>
-            {{ messsage }}
-        {% endfor %}
+{% block body %}
 
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-        {{ form_widget(form) }}
-        <button type="submit" class="button">Add post</button>
-        {{ form_end(form) }}
+    <div class="columns is-centered">
+        <div class="column is-half">
 
+            {# flash message #}
+            {% for messsage in app.flashes('success') %}
+                <div class="alert alert-success"></div>
+                {{ messsage }}
+            {% endfor %}
+
+
+            {# check if user is logged #}
+            {% if app.user %}
+
+                <h1 class="title is-2 mb-3 mt-5 font-weight-normal">Add a post</h1>
+                <div class="mb-5">
+                    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+                    {{ form_widget(form) }}
+                </div>
+                <button type="submit" class="button is-link">Add post</button>
+                {{ form_end(form) }}
+
+            {% else %}
+
+                <div class="title is-2 mb-3 mt-5 font-weight-normal">
+                    <h3>You have to <a href="{{ "/login" }}">Sign in </a>first to adding a post!</h3>
+                </div>
+
+            {% endif %}
+
+        </div>
     </div>
-</div>
 
+{% endblock %}
+
+{% include 'footer.html.twig' %}
 
 </body>
 </html>
