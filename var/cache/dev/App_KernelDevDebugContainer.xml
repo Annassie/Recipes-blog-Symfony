@@ -360,12 +360,6 @@
     <service id="App\Form\AddPostType" class="App\Form\AddPostType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Form\RegisterFormType" class="App\Form\RegisterFormType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
-    <service id="App\Form\RegisterUserType" class="App\Form\RegisterUserType" autowire="true" autoconfigure="true">
-      <tag name="form.type"/>
-    </service>
     <service id="App\Form\UserRegistrationType" class="App\Form\UserRegistrationType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -828,8 +822,6 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AddPostType</argument>
-        <argument>App\Form\RegisterFormType</argument>
-        <argument>App\Form\RegisterUserType</argument>
         <argument>App\Form\UserRegistrationType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1172,7 +1164,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.jO7FlDk"/>
+      <argument type="service" id=".service_locator.omnLOzJ"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5086,10 +5078,6 @@
     <service id=".abstract.instanceof.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddPostType" class="App\Form\AddPostType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AddPostType" class="App\Form\AddPostType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterFormType" class="App\Form\RegisterFormType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\RegisterFormType" class="App\Form\RegisterFormType" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegisterUserType" class="App\Form\RegisterUserType" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Form\RegisterUserType" class="App\Form\RegisterUserType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserRegistrationType" class="App\Form\UserRegistrationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserRegistrationType" class="App\Form\UserRegistrationType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PostRepository" class="App\Repository\PostRepository" autowire="true" abstract="true"/>
@@ -5451,12 +5439,10 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.jO7FlDk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.omnLOzJ" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddPostType" type="service" id="App\Form\AddPostType"/>
-        <argument key="App\Form\RegisterFormType" type="service" id="App\Form\RegisterFormType"/>
-        <argument key="App\Form\RegisterUserType" type="service" id="App\Form\RegisterUserType"/>
         <argument key="App\Form\UserRegistrationType" type="service" id="App\Form\UserRegistrationType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
