@@ -7,6 +7,7 @@ namespace App\Form;
 use App\Entity\Post;
 use phpDocumentor\Reflection\Type;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -27,7 +28,7 @@ class AddPostType extends AbstractType
                 'label' => 'Title',
                 'label_attr' => ['class' => 'label']
             ])
-            ->add('user')
+            ->add('user', HiddenType::class)
             ->add('content', TextareaType::class, [
                 'attr' =>[
                     'class' => 'input'

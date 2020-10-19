@@ -6,10 +6,14 @@ main:
   path: /main
   controller: App\Controller\MainController::index
 
+main-posts:
+  path: /main-posts
+  controller: App\Controller\MainController::allPosts
+
 add-post:
   path: /add-post
   controller: App\Controller\AddPostController::addPost
 
 login:
-  path: /add-post
+  path: /login
   controller: App\Controller\SecurityController::login

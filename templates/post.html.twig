@@ -17,7 +17,7 @@
 
             {# flash message #}
             {% for messsage in app.flashes('success') %}
-                <div class="alert alert-success"></div>
+                <div class="alert"></div>
                 {{ messsage }}
             {% endfor %}
 
@@ -25,7 +25,7 @@
             {# check if user is logged #}
             {% if app.user %}
 
-                <h1 class="title is-2 mb-3 mt-5 font-weight-normal">Add a post</h1>
+                <h1 class="title is-2 mb-5 mt-5 font-weight-normal">Add a post</h1>
                 <div class="mb-5">
                     {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
                     {{ form_widget(form) }}

@@ -18,7 +18,9 @@ return [
     'addPost' => [[], ['_controller' => 'App\\Controller\\AddPostController::addPost'], [], [['text', '/add-post']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
+    'app_register' => [[], ['_controller' => 'App\\Controller\\SecurityController::register'], [], [['text', '/register']], [], []],
     'main' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/main']], [], []],
+    'main-posts' => [[], ['_controller' => 'App\\Controller\\MainController::allPosts'], [], [['text', '/main-posts']], [], []],
     'add-post' => [[], ['_controller' => 'App\\Controller\\AddPostController::addPost'], [], [['text', '/add-post']], [], []],
-    'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/add-post']], [], []],
+    'login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
 ];

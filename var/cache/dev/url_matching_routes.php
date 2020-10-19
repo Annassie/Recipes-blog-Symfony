@@ -16,11 +16,15 @@ return [
         '/add-post' => [
             [['_route' => 'addPost', '_controller' => 'App\\Controller\\AddPostController::addPost'], null, null, null, false, false, null],
             [['_route' => 'add-post', '_controller' => 'App\\Controller\\AddPostController::addPost'], null, null, null, false, false, null],
+        ],
+        '/login' => [
+            [['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null],
             [['_route' => 'login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null],
         ],
-        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\SecurityController::register'], null, null, null, false, false, null]],
         '/main' => [[['_route' => 'main', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
+        '/main-posts' => [[['_route' => 'main-posts', '_controller' => 'App\\Controller\\MainController::allPosts'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

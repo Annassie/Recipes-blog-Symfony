@@ -24,15 +24,36 @@ class MainController extends AbstractController
 {
     /**
      * @Route("/main", name="main")
+     * @param Post $post
+     * @param EntityManagerInterface $em
+     * @return Response
      */
-    public function index(){
+    public function index(EntityManagerInterface $em){
         $form = $this->createForm(FormType::class);
+
+        // get all posts in DB
+        $posts = $em->getRepository(Post::class)->findAll();
 
         return $this->render('main/index.html.twig', [
             'form' => $form->createView(),
             'controller_name' => 'MainController',
+            'posts' => $posts
         ]);
+
     }
+
+/*    /**
+     * @Route("/main-posts", name="mainPosts")
+     * @param User $email
+     * @param EntityManagerInterface $em
+     * @return Response
+     */
+   // public function allPosts(User $email, EntityManagerInterface $em)
+   // {
+
+
+   // }*/
+
 
 
 

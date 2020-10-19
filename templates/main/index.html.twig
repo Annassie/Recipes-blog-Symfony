@@ -40,7 +40,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    {# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <title>Recipes</title>
 </head>
 <body>
@@ -50,26 +51,34 @@
 <div class="container mt-5">
     <h3 class="mb-5">Posts</h3>
 
+    <div class="columns is-flex-wrap-wrap" style="padding: 2rem">
+        {% for post in posts %}
+        <div class="column is-3 mt-3">
+            <div class="card">
+{#                <div class="card-image">
+                    <figure class="image is-2by1">
+                        <img src="https://images.pexels.com/photos/167635/pexels-photo-167635.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940"
+                             alt="Placeholder image">
+                    </figure>
+                </div>#}
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4">{{ post.title }}</p>
+                            <p class="subtitle is-6">Name of user</p>
+                        </div>
+                    </div>
 
-{#    {% for post in posts %}
-    <div class="d-flex flex-wrap">
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h2 class="my-0 font-weight-normal">Title of Post</h2>
-                <h4>{{ user.username }}</h4>
-            </div>
-            <div class="card-body">
-                <img src="" class="img-thumbnail">
-                <ul class="list-unstyled mt-3 mb-4">
-                    <div>{{ post.title }}</div>
-                    <div>{{ post.content }}</div>
-                    <form>dfsfg</form>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Details</button>
+                    <div class="content">
+                        {{ post.content[:60] ~ '...'  }}
+
+
+                    </div>
+                    <button type="button" class="button is-info is-fullwidth btn-block is-light">Details</button>
+                </div>
             </div>
         </div>
-        {% endfor %}#}
-
+        {% endfor %}
     </div>
 </div>
 

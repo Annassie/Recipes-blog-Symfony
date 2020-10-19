@@ -50,30 +50,68 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <link rel=\"stylesheet\" href=\"css/style.css\">
-    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\">
+    ";
+        // line 44
+        echo "    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css\">
     <title>Recipes</title>
 </head>
 <body>
 
 ";
-        // line 48
-        $this->loadTemplate("header.html.twig", "main/index.html.twig", 48)->display($context);
         // line 49
+        $this->loadTemplate("header.html.twig", "main/index.html.twig", 49)->display($context);
+        // line 50
         echo "
 <div class=\"container mt-5\">
     <h3 class=\"mb-5\">Posts</h3>
 
-
+    <div class=\"columns is-flex-wrap-wrap\" style=\"padding: 2rem\">
+        ";
+        // line 55
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 55, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 56
+            echo "        <div class=\"column is-3 mt-3\">
+            <div class=\"card\">
 ";
-        // line 72
-        echo "
-    </div>
+            // line 64
+            echo "                <div class=\"card-content\">
+                    <div class=\"media\">
+                        <div class=\"media-content\">
+                            <p class=\"title is-4\">";
+            // line 67
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 67), "html", null, true);
+            echo "</p>
+                            <p class=\"subtitle is-6\">Name of user</p>
+                        </div>
+                    </div>
+
+                    <div class=\"content\">
+                        ";
+            // line 73
+            echo twig_escape_filter($this->env, (twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 73), 0, 60) . "..."), "html", null, true);
+            echo "
+
+
+                    </div>
+                    <button type=\"button\" class=\"button is-info is-fullwidth btn-block is-light\">Details</button>
+                </div>
+            </div>
+        </div>
+        ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 82
+        echo "    </div>
 </div>
 
 ";
-        // line 76
-        $this->loadTemplate("footer.html.twig", "main/index.html.twig", 76)->display($context);
-        // line 77
+        // line 85
+        $this->loadTemplate("footer.html.twig", "main/index.html.twig", 85)->display($context);
+        // line 86
         echo "
 
 </body>
@@ -98,7 +136,7 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 
     public function getDebugInfo()
     {
-        return array (  77 => 77,  75 => 76,  69 => 72,  62 => 49,  60 => 48,  47 => 37,  43 => 21,);
+        return array (  115 => 86,  113 => 85,  108 => 82,  93 => 73,  84 => 67,  79 => 64,  75 => 56,  71 => 55,  64 => 50,  62 => 49,  55 => 44,  47 => 37,  43 => 21,);
     }
 
     public function getSourceContext()
@@ -145,7 +183,8 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <link rel=\"stylesheet\" href=\"css/style.css\">
-    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\">
+    {# <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css\"> #}
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css\">
     <title>Recipes</title>
 </head>
 <body>
@@ -155,26 +194,34 @@ class __TwigTemplate_9526b4488e305db9f13280d446f20a8673a2d9fadb6c29838dfb8e98ad0
 <div class=\"container mt-5\">
     <h3 class=\"mb-5\">Posts</h3>
 
+    <div class=\"columns is-flex-wrap-wrap\" style=\"padding: 2rem\">
+        {% for post in posts %}
+        <div class=\"column is-3 mt-3\">
+            <div class=\"card\">
+{#                <div class=\"card-image\">
+                    <figure class=\"image is-2by1\">
+                        <img src=\"https://images.pexels.com/photos/167635/pexels-photo-167635.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940\"
+                             alt=\"Placeholder image\">
+                    </figure>
+                </div>#}
+                <div class=\"card-content\">
+                    <div class=\"media\">
+                        <div class=\"media-content\">
+                            <p class=\"title is-4\">{{ post.title }}</p>
+                            <p class=\"subtitle is-6\">Name of user</p>
+                        </div>
+                    </div>
 
-{#    {% for post in posts %}
-    <div class=\"d-flex flex-wrap\">
-        <div class=\"card mb-4 shadow-sm\">
-            <div class=\"card-header\">
-                <h2 class=\"my-0 font-weight-normal\">Title of Post</h2>
-                <h4>{{ user.username }}</h4>
-            </div>
-            <div class=\"card-body\">
-                <img src=\"\" class=\"img-thumbnail\">
-                <ul class=\"list-unstyled mt-3 mb-4\">
-                    <div>{{ post.title }}</div>
-                    <div>{{ post.content }}</div>
-                    <form>dfsfg</form>
-                </ul>
-                <button type=\"button\" class=\"btn btn-lg btn-block btn-outline-primary\">Details</button>
+                    <div class=\"content\">
+                        {{ post.content[:60] ~ '...'  }}
+
+
+                    </div>
+                    <button type=\"button\" class=\"button is-info is-fullwidth btn-block is-light\">Details</button>
+                </div>
             </div>
         </div>
-        {% endfor %}#}
-
+        {% endfor %}
     </div>
 </div>
 

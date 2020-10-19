@@ -4,8 +4,7 @@ namespace App\Controller;
 
 //use http\Env\Response;
 use App\Form\AddPostType;
-use App\Security\LoggedUser;
-use App\Service\LoggedUserService;
+use App\Service\LoggedUser;
 
 use Doctrine\ORM\EntityManagerInterface;
 
@@ -20,14 +19,11 @@ class AddPostController extends AbstractController
      * @Route("/add-post", name="addPost")
      * @param Request $request
      * @param EntityManagerInterface $em
-     * @param LoggedUserService $service
+     * @param LoggedUser $service
      * @return Response
      */
-    public function addPost(Request $request, EntityManagerInterface $em, LoggedUser $service)
+    public function addPost(Request $request, EntityManagerInterface $em)
     {
-
-
-
 
         // creating $form object
         $form = $this->createForm(AddPostType::class);
@@ -37,14 +33,16 @@ class AddPostController extends AbstractController
 
         //send data, if form was submitted and check if form is valid
         if ($form->isSubmitted() && $form->isValid()) {
-            $service->loggedUser();
+
             $post = $form->getData();
 
             // get user
-
-
+           // $service->loggedUser();
+     //       $user = $this->getUser();
+   //         $user->getUsername();
             // add to DB
             $em->persist($post);
+
             $em->flush();
 
             // flash message

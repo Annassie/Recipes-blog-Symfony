@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> #}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+          integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>{% block title %}Registration{% endblock %}</title>
+</head>
+
+
+<body>
+{% include 'header.html.twig' %}
+
+{% block body %}
+<form method="post">
+    <div class="columns is-centered">
+        <div class="column is-half">
+
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <h1 class="title is-2 mb-3 mt-5 font-weight-normal">Please sign up</h1>
+                    <div class="mb-5">
+                    {{ form_start(register_form) }}
+                    {{ form_widget(register_form) }}
+                    </div>
+                    <button class="button is-link" type="submit">
+                        Sign up
+                    </button>
+                    {{ form_end(register_form) }}
+
+                </div>
+            </div>
+
+            {#
+            #}{# email input #}{#
+            <label for="inputEmail" class="label required mt-4">Email</label>
+            <div class="field">
+                <p class="control has-icons-left has-icons-right">
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="input"
+                           required autofocus placeholder="Email">
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </p>
+            </div>
+            #}{# password input #}{#
+            <label for="inputPassword" class="label required mt-4">Password</label>
+            <div class="field">
+                <p class="control has-icons-left">
+                    <input type="password" name="password" id="inputPassword" class="input mb-5" required
+                           placeholder="Password">
+
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </p>
+            </div>
+            #}{# checkbox and button #}{#
+            <div class="columns is-desktop is-vcentered m-0">
+                <div class="checkbox mr-3">
+                    <label class="">
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
+                </div>
+                <div>
+                    <button class="button is-link" type="submit">
+                        Sign in
+                    </button>
+                </div>
+            </div> #}
+
+            {#
+            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+            See https://symfony.com/doc/current/security/remember_me.html
+            #}
+
+
+        </div>
+    </div>
+</form>
+{% endblock %}
+{% include 'footer.html.twig' %}
+</body>

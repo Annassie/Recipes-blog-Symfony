@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -20,23 +19,18 @@ class Post
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotBlank(message="The field can not be empty")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
-     *@Assert\NotBlank(message="The field can not be empty")
      */
     private $content;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="posts")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $user;
-
-
 
     public function getId(): ?int
     {
@@ -54,11 +48,18 @@ class Post
 
         return $this;
     }
-/*    public function __toString()
-    {
-        return $this->getUser(User::class);
-    }*/
 
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
 
     public function getUser(): ?User
     {
@@ -70,21 +71,5 @@ class Post
         $this->user = $user;
 
         return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getContent()
-    {
-        return $this->content;
-    }
-
-    /**
-     * @param mixed $content
-     */
-    public function setContent($content): void
-    {
-        $this->content = $content;
     }
 }
